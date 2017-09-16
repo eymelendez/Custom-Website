@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Build your dream PC Page. Using JavaScript Programming!</title>
+
+	<script type = "text/javascript">
+		<!--
+		document.writeIn(
+			"<h1>Welcome to JavaScript Programming!<h1>");
+		// -->
+		
+	
+
+	</script>
+
+</head>
+
+
+<body>
+
+   <ul>
+  <li><a href="index.html">Main Page</a></li>
+  <li><a href="second_page.html">Hobbies</a></li>
+  <li><a href="third_page.html">Links</a></li>
+  <li><a href="index_copy.html">Main Page Copy</a></li>
+  <li><a href="second_page_copy.html">Hobbies Copy</a></li>
+  <li><a href="third_page_copy.html">Links Copy</a></li>
+  <li><a href="UI_JavaScript_Official.html">Build PC</a></li>
+  
+  <link rel="stylesheet" type="text/css" href="css/Style_Sheet.css">
+  </ul>
+
+	<div id="container">
+		<div class="panel">
+			<h2>Welcome to the Build your dream PC program page. <br> Using JavaScript Programming!</h2>
+			<h3>In this page you can buy the parts needed to build the ultimate PC of your dreams.<h3>
+		</div>
+		
+			
+
+<html>
+<html>
+<head>
+    
+<script language=JavaScript>
+
+<!-- Here are the values for the items in the selections -->
+
+var CompItems = new Array();
+<!-- Processor Values -->
+CompItems[100] = 220;
+CompItems[101] = 72;
+CompItems[102] = 963;
+CompItems[103] = 285;
+CompItems[104] = 300;
+
+<!-- Hard Drive Values -->
+CompItems[200] = 35;
+CompItems[201] = 65;
+CompItems[202] = 110;
+CompItems[203] = 150;
+CompItems[204] = 200;
+   
+<!-- Motherboard Values-->
+CompItems[300] = 170;
+CompItems[301] = 140;
+CompItems[302] = 120;
+CompItems[303] = 65;
+CompItems[304] = 56;
+
+<!-- Memory RAM Values -->
+CompItems[400] = 128;
+CompItems[401] = 161;
+CompItems[402] = 285;
+CompItems[403] = 388;
+CompItems[404] = 350;
+
+<!-- Graphics Processing Unit -->
+CompItems[500] = 510;
+CompItems[501] = 750;
+CompItems[502] = 210;
+CompItems[503] = 120;
+CompItems[504] = 60;
+
+<!-- Power Supply -->
+CompItems[600] = 90;
+CompItems[601] = 97;
+CompItems[602] = 75;
+CompItems[603] = 101;
+CompItems[604] = 90;
+
+<!-- CD-ROM , DVD-ROM , Scanner Values -->
+CompItems[700] = 50;
+CompItems[701] = 75;
+CompItems[702] = 100;
+
+<!-- Tower Values -->
+CompItems[800] = 10;
+CompItems[801] = 15;
+CompItems[802] = 25;
+
+function updateOrderDetails()
+{
+   var total = 0;
+   var totalIVUIncluded;
+   const IVU = 0.115;
+   var orderDetails = "";
+   var formElement;
+
+   formElement = document.form1.cboProcessor[document.form1.cboProcessor.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "Processor : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+    
+   formElement = document.form1.cboHardDrive[document.form1.cboHardDrive.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "Hard Drive : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+
+   formElement = document.form1.cboMotherboard[document.form1.cboMotherboard.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "Motherboard : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+   
+   formElement = document.form1.cboMemoryRam[document.form1.cboMemoryRam.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "Memory RAM : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+
+   formElement = document.form1.cboGPU[document.form1.cboGPU.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "GBU : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+
+   formElement = document.form1.cboPowerSupply[document.form1.cboPowerSupply.selectedIndex];
+   totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+   total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   orderDetails = orderDetails + "Power Supply : " +  formElement.text + " $" + CompItems[formElement.value] + "\n";
+
+   formElement = document.form1.chkCDROM
+   if (formElement.checked == true)
+   {
+      orderDetails = orderDetails + "CD-ROM : $" + CompItems[formElement.value] + "\n";
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   }
+    
+   formElement = document.form1.chkDVD
+   if (formElement.checked == true)
+   {
+      orderDetails = orderDetails + "DVD-ROM : $" + CompItems[formElement.value] + "\n";
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   }
+    
+   formElement = document.form1.chkScanner
+   if (formElement.checked == true)
+   {
+      orderDetails = orderDetails + "Scanner : $" + CompItems[formElement.value] + "\n";
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement.value]) + totalIVUIncluded;
+   }
+    
+   formElement = document.form1.radCase
+   if (formElement[0].checked == true)
+   {
+      orderDetails = orderDetails + "Desktop Case : $" + CompItems[formElement[0].value];
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement[0].value]) + totalIVUIncluded;
+   }
+   else if (formElement[1].checked == true)
+   {
+      orderDetails = orderDetails + "Mini Tower Case : $" + CompItems[formElement[1].value];
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement[1].value]) + totalIVUIncluded;
+   }
+   else
+   {
+      orderDetails = orderDetails + "Full Tower Case : $" + CompItems[formElement[2].value]
+      totalIVUIncluded = parseFloat(CompItems[formElement.value]) * IVU;
+      total = total + parseFloat(CompItems[formElement[2].value]) + totalIVUIncluded;
+   }
+
+   
+    
+   orderDetails = orderDetails + "\n\nTotal Order Cost is $" + total;
+    
+   document.form1.txtOrder.value = orderDetails;
+}
+    
+</script>
+</head>
+
+
+<body>
+<form name=form1>
+<table>
+<TR>
+<TD width=300>
+Processor
+<br>
+<select name=cboProcessor>
+   <option value=100>Intel Core i5-7600K</option>
+   <option value=101>Intel Pentium G4560</option>
+   <option value=102>Core i9-7900X</option>
+   <option value=103>Ryzen 7 1700</option>
+   <option value=104>Intel Core i7-8550U</option>
+</select>
+<br><br>
+
+Hard drive
+<br>
+<select name=cboHardDrive>
+   <option value=200>500GB</option>
+   <option value=201>1TB</option>
+   <option value=202>2TB</option>
+   <option value=203>5TB</option>
+   <option value=204>10TB</option>
+</select>
+<br><br>
+
+Motherboard
+<br>
+<select name=cboMotherboard>
+   <option value=300>ASUS MAXIMUS VIII HERO</option>
+   <option value=301>ASRock Fatal1ty Z170 PG i7</option>
+   <option value=302>MSI 970 GAMING</option>
+   <option value=303>MSI B150M Mortar</option>
+   <option value=304>ASUS M5A78L-M USB3</option>
+</select>
+<br><br>
+
+Memory RAM:
+<br>
+<select name=cboMemoryRam>
+   <option value=400>Kingston HyperX Fury Black 16 GB</option>
+   <option value=401>G Skill Trident Z RGB Series 16 GB</option>
+   <option value=402>G Skill RipJaws V 32 GB</option>
+   <option value=403>Corsair Dominator Platinum 32 GB</option>
+   <option value=404>Crucial Ballistix Elite 32 GB</option>
+</select>
+<br><br>
+
+Graphics Processing Unit
+<br>
+<select name=cboGPU>
+   <option value=500>GeForce GTX 1080</option>
+   <option value=501>GeForce GTX 1080 Ti</option>
+   <option value=502>GeForce GTX 1060</option>
+   <option value=503>GeForce GTX 1050</option>
+   <option value=504>GeForce GTX 970</option>
+</select>
+<br><br>
+
+Power Supply
+<br>
+<select name=cboPowerSupply>
+   <option value=600>Corsair SF450</option>
+   <option value=601>SilverStone SX5</option>
+   <option value=602>Bitfenix BWG550M</option>
+   <option value=603>EVGA SuperNova</option>
+   <option value=604>FSP Hydro G 650</option>
+</select>
+<br><br>
+
+
+CD-ROM
+<input type="checkbox" name=chkCDROM value="700">
+<br>
+DVD-ROM
+<input type="checkbox" name=chkDVD value="701">
+<br>
+Scanner
+<input type="checkbox" name=chkScanner value="702">
+<br><br>
+Desktop Case
+<input type="radio" name=radCase checked value="800">
+<br>
+Mini Tower
+<input type="radio" name=radCase value="801">
+<br>
+Full Tower
+<input type="radio" name=radCase value="802">
+<P>
+<input type="button" value="Checkout" name=butUpdate onclick="updateOrderDetails()">
+</P>
+</TD>
+<TD>
+<textarea rows=20 cols=35 id=txtOrder name=txtOrder>
+</textarea>
+</TD>
+</TR>
+</table>
+</form>
+</body>
+</html>
+
+
+<body>
+
+</html>
